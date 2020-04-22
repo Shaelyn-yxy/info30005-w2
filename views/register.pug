@@ -1,0 +1,20 @@
+h1 MONGODB - EXERCISE
+section.insert
+    h3 Insert User
+    form(action='/insert', method='post')
+        .input
+            label(for='first_name') First Name:
+            input#first_name(type='text', name='first_name')
+        .input
+            label(for='last_name') Last Name:
+            input#last_name(type='text', name='last_name')
+        .input
+            label(for='email') Email:
+            input#email(type='text', name='email')
+        .input
+            label(for='user_name') User Name:
+            input#user_name(type='text', name='user_name')
+        .input
+            label(for='password') Password:
+            input#password(type='text', name='password')
+        button(type='submit') INSERT
