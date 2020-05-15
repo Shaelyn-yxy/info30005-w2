@@ -2,9 +2,10 @@
 <html>
 <head>
     <title><%= user %>'s page</title>
-    <link rel='stylesheet' href='/stylesheets/users.css'/>
+    <%- include users.ejs %>
+    <link rel='stylesheet' href='/stylesheets/insert.css'/>
+    <script src = "http://code.jquery.com/jquery-1.9.1.js"></script>
 </head>
-<script src = "http://code.jquery.com/jquery-1.9.1.js"></script>
 
 <section class="box">
     <h2 id="enter">Enter your book information here.</h2>

@@ -58,6 +58,10 @@ const login = function (req, res, next) {
         }
     })
 }
+const showInsertForm = function(req, res){
+    console.log(currUser);
+    res.render('insert', {user: currUser});
+};
 
 const redirectUserPage = function (req, res) {
 
@@ -121,7 +125,6 @@ var deleteBooks = async function(req, res, next) {
 }
 
 const showUserPage = function (req, res) {
-
     if (isLogin){
         res.render('users',{user: currUser})
     }else{
@@ -139,5 +142,6 @@ module.exports ={
     removeFavorBooks,
     deleteBooks,
     searchBooks,
-    login
+    login,
+    showInsertForm
 };

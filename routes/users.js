@@ -18,6 +18,10 @@ router.get("/register", function(req, res){
     res.render("register", {errors: ''});
 });
 
+//router.get("/insert", userController.showInsertForm);
+router.get("/insert", function(req, res){
+    res.render("insert");
+});
 // add favourite book
 router.get('/addFav', userController.addFavorBooks);
 
@@ -38,7 +42,6 @@ router.get("/:userName", userController.showUserPage);
 
 // login handle
 router.post('/login', userController.login);
-
 
 // upload a book
 router.post("/insert", bookController.createBook);

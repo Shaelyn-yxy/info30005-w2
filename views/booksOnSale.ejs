@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-<%- include navBar.ejs %>
-<link rel='stylesheet' href='/stylesheets/booksSection.css'/>
+<%- include users.ejs%>
 <body>
 
-<h3>My Books on sales:</h3>
-<div class="grid-container">
+<div class="get">
+    <h3>My Books on sales:</h3>
+
     <% for (var i = 0; i < list.length; i++) { %>
-    <div class = "box">
     Book<%=i+1%>:
     <div><%= list[i].bookName%></div>
     <div><%= list[i].authorName%></div>
@@ -20,7 +19,6 @@
     </button>
     <br><br>
     <% } %>
-    </div>
 </div>
 
 </body>
