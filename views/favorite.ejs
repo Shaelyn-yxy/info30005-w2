@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<%- include users.ejs %>
+<body>
+
+<section class="get">
+    <div>
+        <h3>Favourite Book:</h3>
+
+        <% for (var i = 0; i < list.length; i++) { %>
+            Book<%=i+1%>:
+            <div>Book Name:<%= list[i].bookName%></div>
+            <div>Author Name:<%= list[i].authorName%></div>
+            <div>Category:<%= list[i].category%></div>
+            <div>Price:<%= list[i].price%></div>
+            <button type="button">
+                <a href="/users/deleteFav?id=<%= list[i]._id %>">
+                    Remove
+                </a>
+            </button>
+            <button type="button">
+                <a href="/home/book?id=<%= list[i]._id %>">
+                    Contact Seller
+                </a>
+            </button>
+            <br><br>
+        <% } %>
+
+    </div>
+</section>
+
+</body>
+</html>

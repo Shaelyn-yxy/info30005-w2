@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search</title>
+    <%- include navBar.ejs %>
+    <link rel='stylesheet' href='/stylesheets/booksSection.css'/>
+</head>
+<body>
+<div class="grid-container">
+<% list.map(function(item,i){%>
+    <div class = "box">
+    Book<%=i+1%>:<br>
+    Book Name:<%= item.bookName %><br>
+    Author name:<%= item.authorName %><br>
+    Category:<%= item.category %><br>
+    Price:<%= item.price %><br>
+    <button type="button">
+    <a href="/users/addFav?id=<%= item._id %>">
+        <img src = "../image/heart.png" width="20">
+    </a>
+    </button>
+    <button type="button" class = "button">
+    <a href="/home/book?id=<%= item._id %>">
+        Contact Seller
+    </a>
+    </button>
+    </div>
+<% }) %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bookDetail</title>
+    <%- include navBar.ejs %>
+<link rel='stylesheet' href='/stylesheets/bookDetail.css'/>
+</head>
+<body>
+
+<div class="box">
+    <h1>This Book is:</h1><br>
+    Book Name: <%= list[0].bookName%><br>
+    Author Name: <%= list[0].authorName%><br>
+    Category : <%= list[0].category%><br>
+    Price : <%= list[0].price%><br>
+    Seller's Name: <%= user.userName %><br>
+    Seller's E-mail: <%= user.email %><br>
+    <button type="button" class= "button">
+        <a href="/home">
+            Return to the main page
+        </a>
+    </button>
+</div>>
+<br><br>
+
+</body>
+</html>

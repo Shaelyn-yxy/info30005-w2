@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <%- include navBar.ejs %>
+    <link rel='stylesheet' href='/stylesheets/home.css'/>
+</head>
+<body>
+<div class="search">
+    <form action ="/home/search" method = "get" class = "searchBox">
+        <h2> Search The Book You Want</h2>
+        <input type = "text" name = "keywords" placeholder = "Search...">
+        <input type = submit value = "Go!" class="searchButton">
+    </form>
+</div>
+</body>
+</html>
+
+
+
+<!--</body>-->
+
+<!--    <div class="content"><button type="button"><a href="/users">userpage</a></button></div>-->
+<!--    <div class="content"><button><a href="/home/getAllBooks">Load Books</a></button></div>-->
+<!--    <div class="content"><button type="button"><a href="/home/aboutUs">About Us</a></button></div>-->
+<!--    <div class="content">-->
+<!--        <form action ="/home/search" method = "get">-->
+<!--            <input type = "text" name = "keywords" placeholder = "input keywords">-->
+<!--            <input type = submit value = "search">-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--    <div id="bachelors">-->
+<!--        <h2>Bachelors</h2>-->
+<!--        <ul>-->
+<!--            <li><a href="/home/category?category=Bachelors of Arts">Machelors of Arts</a></li>-->
+<!--            <li><a href="/home/category?category=Bachelors of Agriculture">Bachelors of Agriculture</a></li>-->
+<!--            <li><a href="/home/category?category=Bachelors of BioMedicine">Bachelors of BioMedicine</a></li>-->
+<!--            <li><a href="/home/category?category=Bachelors of Commerce">Bachelors of Commerce</a></li>-->
+<!--            <li><a href="/home/category?category=Bachelors of Design">Bachelors of Design</a></li>-->
+<!--            <li><a href="/home/category?category=Bachelors of Music">Bachelors of Music</a></li>-->
+<!--            <li><a href="/home/category?category=Bachelors of Science">Bachelors of Science</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <h3>Book list: </h3>-->
+<!--</body>-->
+<!--</html>-->

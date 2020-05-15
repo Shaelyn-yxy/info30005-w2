@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search</title>
+    <%- include home.ejs %>
+</head>
+<body>
+<% list.map(function(item,i){%>
+<form>
+    Book<%=i+1%>:
+    <div>Book Name:<%= item.bookName %></div>
+    <div>Author name:<%= item.authorName %></div>
+    <div>Category:<%= item.category %></div>
+    <div>Price:<%= item.price %></div>
+    <button type="button">
+        <a href="/users/addFav?id=<%= item._id %>">
+            Add to Favorite list
+        </a>
+    </button>
+    <button type="button">
+        <a href="/home/book?id=<%= item._id %>">
+            Contact Seller
+        </a>
+    </button>
+</form>
+<p>
+    <% }) %>
+</body>
+</html>

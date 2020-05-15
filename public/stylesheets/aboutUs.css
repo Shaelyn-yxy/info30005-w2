@@ -1,0 +1,19 @@
+.container {
+    max-width: 960px;
+    margin:0 auto;
+    background: #f9f9f9;
+    font-size: 24px;
+    padding: 25px;
+}
+.moving{
+    background: url('../image/login.jpeg') no-repeat fixed center;
+    background-size: cover;
+    background-attachment: fixed;
+    height:500px;
+}
+.moving2{
+    background: url('../image/buy&sell.jpg') no-repeat fixed center;
+    background-size: cover;
+    background-attachment: fixed;
+    height:500px;
+}

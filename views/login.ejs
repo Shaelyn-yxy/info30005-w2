@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel='stylesheet' href='/stylesheets/login.css'/>
+</head>
+<body>
+<div class = 'login'>
+    <h1>Login</h1>
+    <form action="/users/login" method="post">
+        <div class="inputBox">
+            <input id="email" type="text" name="email" required="" >
+            <label for="email">Email</label>
+        </div>
+        <div class="inputBox">
+            <input id="password" type="password" name="password" required="" >
+            <label for="password">Password</label>
+        </div>
+        <input type="submit" value="Login" class="submit">
+    </form>
+    </br>
+    </br>
+    <% if(errors) { %>
+        <div class = "error"> “Your email or password is not correct." </div>
+    <% } %>
+</div>
+</body>
+</html>

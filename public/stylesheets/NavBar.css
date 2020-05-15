@@ -1,0 +1,59 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: sans-serif, Helvetica;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.2)),url("../image/login.jpeg") center no-repeat;
+    background-size: cover;
+    background-repeat:repeat-y;
+
+}
+.container{
+    max-width: 120rem;
+    width:90%;
+    margin:0 auto;
+}
+nav{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size:1.6rem;
+
+}
+.UniStore{
+    font-size: 3rem;
+    font-weight: 500;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a{
+    padding: 1rem 0;
+    margin: 3rem;
+    position: relative;
+    letter-spacing: 2px;
+}
+nav ul li a:last-child{
+    margin-right:0;
+}
+
+nav ul li a:hover{
+    color: #f2d547;
+}

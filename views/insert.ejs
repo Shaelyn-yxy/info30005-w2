@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= user %>'s page</title>
+    <link rel='stylesheet' href='/stylesheets/users.css'/>
+</head>
+<script src = "http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<section class="box">
+    <h2 id="enter">Enter your book information here.</h2>
+    <form action="/users/insert" method="post">
+        <input id="bookName" type="text" name="bookName" placeholder="book name" />
+
+        <input id="authorName" type="text" name="authorName" placeholder="author name" />
+
+        <input id="price" type="text" name="price" value = "$"/>
+
+        <input id="seller" type="text" name="seller" value = <%= user %>>
+
+        <label for="category">Category: </label>
+        <select name="category">
+            <option value="Bachelors of Arts">Bachelors of Arts</option>
+            <option value="Bachelors of Agriculture">Bachelors of Agriculture</option>
+            <option value="Bachelors of BioMedicine">Bachelors of BioMedicine</option>
+            <option value="Bachelors of Commerce">Bachelors of Commerce</option>
+            <option value="Bachelors of Design">Bachelors of Design</option>
+            <option value="Bachelors of Music">Bachelors of Music</option>
+            <option value="Bachelors of Science">Bachelors of Science</option>
+        </select>
+
+        =========================================================================
+        <input id="img_input2" type="file" accept="image/*"/>
+        <label for="img_input2" id="img_label2">Choose file+
+            <i class="fa fa-plus fa-lg"></i>
+        </label>
+        <div id="preview_box2"></div>
+
+        <script type="text/javascript">
+
+            $("#img_input2").on("change", function(e) {
+
+                var file = e.target.files[0]; //获取图片资源
+                console.log(file);
+                // 只选择图片文件
+                if (!file.type.match('image.*')) {
+                    return false;
+                }
+
+                var reader = new FileReader();
+
+                reader.readAsDataURL(file); // 读取文件
+
+                // 渲染文件
+                reader.onload = function(arg) {
+                    var img = '<img class="preview" src="' + arg.target.result + '" alt="preview"/>';
+                    $("#preview_box2").empty().append(img);
+                }
+            })
+
+            var form_data = new FormData();
+            var file_data = $("#img_input2").prop("files")[0];
+
+            // 把上传的数据放入form_data
+            form_data.append("user", "Mike");
+            form_data.append("img", file_data);
+
+            $.ajax({
+                type: "POST", // 上传文件要用POST
+                url: "",
+                dataType : "json",
+                crossDomain: true, // 如果用到跨域，需要后台开启CORS
+                processData: false,  // 注意：不要 process data
+                contentType: false,  // 注意：不设置 contentType
+                data: form_data
+            }).success(function(msg) {
+                console.log(msg);
+            }).fail(function(msg) {
+                console.log(msg);
+            });
+        </script>
+        ===============================================================================
+        <input type="submit" value="Insert">
+    </form>
+</section>
+</html>

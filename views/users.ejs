@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= user %>'s page</title>
+    <%- include navBar.ejs %>
+    <link rel='stylesheet' href='/stylesheets/users.css'/>
+</head>
+<script src = "http://code.jquery.com/jquery-1.9.1.js"></script>
+
+
+<div class = "button">
+    <div id="b1"><a href="/users/insert">Upload book</a></div>
+    <div id="b2"><a href="/users/booksOnSale?seller=<%= user %>">My upload</a></div>
+    <div id="b3"><a href="/users/favorite?username=<%= user %>">My favorite</a></div>
+</div>
+
+</html>

@@ -1,0 +1,44 @@
+body {
+    padding: 100px;
+    font: 20px  Helvetica, Arial, sans-serif;
+    margin-top: 130px;
+
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.button1 {
+
+    border-radius: 8px;
+    padding: 10px 32px;
+    display: flow-root;
+    margin: 0px 480px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 2px solid #4CAF50;
+}
+
+.button1:active {
+    background-color: white;
+    transform: translateY(4px);
+}
+
+.button2 {
+
+    border-radius: 8px;
+    padding: 10px 32px;
+    display: flow-root;
+    margin: 0px 470px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 2px solid #4CAF50;
+}
+
+.button2:active {
+    background-color: white;
+    transform: translateY(4px);
+}
+

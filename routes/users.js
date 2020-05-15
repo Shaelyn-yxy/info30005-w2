@@ -1,35 +1,52 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose');
-var userModel = require('../models/users_info');
-var userController = require('../controllers/users_action.js');
+var userController = require('../controllers/usersAction.js');
+var bookController = require('../controllers/booksAction.js');
+
+
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('Hello user！！');
-});
+router.get('/', userController.redirectUserPage);
 
 // Login page
-router.get('/login', (req, res) => res.render('login'));
-
-// Register page
-router.get('/register', (req, res) => res.render('register'));
-
-// login handle
-router.post('/login', function (req, res, next) {
-  console.log(req.body.email, req.body.password);
-  let {email, password} =req.body;
-  userModel.find({email, password}).then((docs) => {
-    if (docs.length > 0) {
-      res.redirect('/users');
-    } else {
-      console.log("fail to login");
-      res.redirect('/users/login')
-    }
-  })
+router.get("/login", function(req, res){
+    res.render("login", {errors: ''});
 });
 
-router.post('/insert' , userController.createUser);
+// Register page
+router.get("/register", function(req, res){
+    res.render("register", {errors: ''});
+});
 
+// add favourite book
+router.get('/addFav', userController.addFavorBooks);
+
+// show favourite book list
+router.get('/favorite', userController.showFavorBooks);
+
+// show upload_book book list
+router.get('/booksOnSale', userController.showUploadBooks);
+
+// delete a book from favourite book list
+router.get('/deleteFav', userController.removeFavorBooks);
+
+// delete a book from database
+router.get('/deleteBooks', userController.deleteBooks);
+
+// users' own pages
+router.get("/:userName", userController.showUserPage);
+
+// login handle
+router.post('/login', userController.login);
+
+
+// upload a book
+router.post("/insert", bookController.createBook);
+
+// register handle
+router.post('/register', userController.createUser);
 
 module.exports = router;
+
+
+
